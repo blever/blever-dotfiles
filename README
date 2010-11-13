@@ -1,0 +1,5 @@
+=== INSTALLATION === 
+Install this in ~/local/dotfiles
+
+ln -s ~/.bashrc ~/local/dotfiles/bash_profile
+ln -s ~/.bash_profile ~/local/dotfiles/bashrc
