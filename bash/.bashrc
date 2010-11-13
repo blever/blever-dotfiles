@@ -14,8 +14,6 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
 
 # Git
 export EDITOR=/usr/bin/vim
-GIT_PS1_SHOWDIRTYSTATE=true
-export PS1='\u@\h:$(__git_ps1 "[%s]")\w$ '
 
 # Local binaries
 export PATH=$HOME/Documents/bin:$PATH
@@ -31,3 +29,7 @@ alias la='ls -alG'
 # Directory aliases
 alias cd-a='cd ~/Documents/code/accelerate'
 alias cd-s='cd ~/Documents/code/svm'
+
+# Prompt
+source $HOME/local/dotfiles/bash/prompt
+
