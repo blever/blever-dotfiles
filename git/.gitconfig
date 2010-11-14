@@ -1,0 +1,8 @@
+[user]
+	name = Ben Lever
+	email = ben.lever@nicta.com.au
+[color]
+	diff = auto
+	branch = auto
+	status = auto
+	interactive = auto
