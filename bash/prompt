@@ -1,4 +1,20 @@
+#------------------------------------------------------------------------------
+# Set the command line prompt.
+#------------------------------------------------------------------------------
+
+#
+# Which machine?
+#
+if [ `uname` == "Linux" ]; then
+    ETC=/etc
+elif [ `uname` == "Darwin" ]; then
+    ETC=/opt/local/etc
+fi
+
+
+#
 # Colours
+#
 txtblk='\e[0;30m' # Black - Regular
 txtred='\e[0;31m' # Red
 txtgrn='\e[0;32m' # Green
@@ -35,6 +51,25 @@ txtrst='\e[0m'    # Text Reset
 
 
 #
+# Bash Completion
+#
+if [ -f $ETC/bash_completion ]; then
+    . $ETC/bash_completion
+fi
+
+
+#
+# Git mini-prompt
+#
+if [ -f $ETC/bash_completion.d/git ]; then
+    GIT_PS1_SHOWDIRTYSTATE=true
+    GIT_PROMPT=$(__git_ps1 "[%s]")
+else
+    GIT_PROMPT=''
+fi
+
+
+#
 # Prompt should look like:
 #
 #   blever@machine:[master]~/some/directory/path
@@ -42,6 +77,5 @@ txtrst='\e[0m'    # Text Reset
 #     ^
 #     prompt starts here
 #
-GIT_PS1_SHOWDIRTYSTATE=true
-export PS1="\n${txtgrn}\u@\h:"${bldred}'$(__git_ps1 "[%s]")'"${txtblu}\w\n${bldblk}$ ${txtrst}"
+export PS1="\n${txtgrn}\u@\h:"${bldred}'$GIT_PROMPT'"${txtblu}\w\n${bldblk}$ ${txtrst}"
 

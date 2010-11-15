@@ -1,0 +1,17 @@
+#------------------------------------------------------------------------------
+# Specifics settings for MacBook Pro.
+#------------------------------------------------------------------------------
+
+# MacPorts
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
+
+# Local binaries
+export PATH=$HOME/Documents/bin:$PATH
+export PATH=$HOME/Documents/bin/darcs-to-git:$PATH
+export PATH=$HOME/Documents/bin/decuda:$PATH
+
+# Directory aliases
+alias cd-a='cd ~/Documents/code/accelerate'
+alias cd-s='cd ~/Documents/code/svm'
+

@@ -1,9 +1,7 @@
-# Bash Completion
-. /opt/local/etc/bash_completion
-
-# MacPorts
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
+#------------------------------------------------------------------------------
+# .bashrc - main entry point.
+#------------------------------------------------------------------------------
+DOTFILES=$HOME/local/dotfiles
 
 # Haskell
 export PATH=$HOME/.cabal/bin:$PATH
@@ -12,24 +10,18 @@ export PATH=$HOME/.cabal/bin:$PATH
 export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
 
-# Git
+# Editor
 export EDITOR=/usr/bin/vim
-
-# Local binaries
-export PATH=$HOME/Documents/bin:$PATH
-export PATH=$HOME/Documents/bin/darcs-to-git:$PATH
-export PATH=$HOME/Documents/bin/decuda:$PATH
 
 # Aliases
 alias ls='ls -G'
 alias ll='ls -lG'
 alias la='ls -alG'
 
-
-# Directory aliases
-alias cd-a='cd ~/Documents/code/accelerate'
-alias cd-s='cd ~/Documents/code/svm'
-
 # Prompt
-source $HOME/local/dotfiles/bash/prompt
+. $DOTFILES/bash/prompt
 
+# Laptop specifics
+if [ `uname` == "Darwin" ]; then
+    . $DOTFILES/bash/laptop
+fi
