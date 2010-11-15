@@ -77,5 +77,5 @@ fi
 #     ^
 #     prompt starts here
 #
-export PS1="\n${txtgrn}\u@\h:"${bldred}'$GIT_PROMPT'"${txtblu}\w\n${bldblk}$ ${txtrst}"
+export PS1="${txtgrn}\u@\h:"${bldred}'$GIT_PROMPT'"${txtblu}\w\n${bldblk}$ ${txtrst}"
 
