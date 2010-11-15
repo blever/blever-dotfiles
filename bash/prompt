@@ -63,7 +63,7 @@ fi
 #
 if [ -f $ETC/bash_completion.d/git ]; then
     GIT_PS1_SHOWDIRTYSTATE=true
-    GIT_PROMPT=$(__git_ps1 "[%s]")
+    GIT_PROMPT='$(__git_ps1 "[%s]")'
 else
     GIT_PROMPT=''
 fi
@@ -77,5 +77,5 @@ fi
 #     ^
 #     prompt starts here
 #
-export PS1="${txtgrn}\u@\h:"${bldred}'$GIT_PROMPT'"${txtblu}\w\n${bldblk}$ ${txtrst}"
+export PS1="${txtgrn}\u@\h:"${bldred}$GIT_PROMPT"${txtblu}\w\n${bldblk}$ ${txtrst}"
 
