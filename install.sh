@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DOTFILES=$HOME/local/dotfiles
 
@@ -8,7 +8,11 @@ ln -sf $DOTFILES/bash/bash_profile   $HOME/.bash_profile
 
 # Install vim scripts
 ln -sf  $DOTFILES/vim/vimrc          $HOME/.vimrc
-ln -shf $DOTFILES/vim/vim            $HOME/.vim
+if [ `uname` == "Linux" ]; then
+    ln -sfn $DOTFILES/vim/vim        $HOME/.vim
+elif [ `uname` == "Darwin" ]; then
+    ln -sfh $DOTFILES/vim/vim        $HOME/.vim
+fi
 
 # Install git scritps
 ln -sf $DOTFILES/git/.gitconfig      $HOME/.gitconfig
