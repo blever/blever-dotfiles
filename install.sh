@@ -15,4 +15,4 @@ elif [ `uname` == "Darwin" ]; then
 fi
 
 # Install git scritps
-ln -sf $DOTFILES/git/.gitconfig      $HOME/.gitconfig
+ln -sf $DOTFILES/git/gitconfig       $HOME/.gitconfig
