@@ -3,13 +3,6 @@
 #------------------------------------------------------------------------------
 DOTFILES=$HOME/local/dotfiles
 
-# Haskell
-export PATH=$HOME/.cabal/bin:$PATH
-
-# CUDA
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
-
 # Editor
 export EDITOR=/usr/bin/vim
 
@@ -25,3 +18,11 @@ alias la='ls -alG'
 if [ `uname` == "Darwin" ]; then
     . $DOTFILES/bash/laptop
 fi
+
+# Haskell
+export PATH=$HOME/.cabal/bin:$PATH
+
+# CUDA
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
+
