@@ -7,4 +7,4 @@
 	status = auto
 	interactive = auto
 [core]
-	excludesfile = ~/local/dotfiles/git/gitignore
+	excludesfile = ~/.dotfiles/.gitignore

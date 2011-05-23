@@ -1,4 +1,28 @@
 #------------------------------------------------------------------------------
+# .bashrc - main entry point.
+#------------------------------------------------------------------------------
+
+# Editor
+export EDITOR=/usr/bin/vim
+
+# Aliases
+alias ls='ls -G'
+alias ll='ls -lG'
+alias la='ls -alG'
+
+# Haskell
+export PATH=$HOME/.cabal/bin:$PATH
+
+# Hadoop
+export HADOOP=$HOME/Documents/code/browsing/hadoop-0.20.2-cdh3u0
+export PATH=$HADOOP/bin:$PATH
+
+# CUDA
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib:$LD_LIBRARY_PATH
+
+
+#------------------------------------------------------------------------------
 # Set the command line prompt.
 #------------------------------------------------------------------------------
 
@@ -78,4 +102,25 @@ fi
 #     prompt starts here
 #
 export PS1="\[$txtgrn\]\u@\h:\[$bldred\]"$GIT_PROMPT"\[$txtblu\]\w\[$bldblk\]\n$ \[$txtrst\]"
+
+
+#------------------------------------------------------------------------------
+# Specifics settings for MacBook Pro.
+#------------------------------------------------------------------------------
+
+if [ `uname` == "Darwin" ]; then
+  # MacPorts
+  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+  export LD_LIBRARY_PATH=/opt/local/lib:$LD_LIBRARY_PATH
+
+  # Local binaries
+  export PATH=$HOME/Documents/bin:$PATH
+  export PATH=$HOME/Documents/bin/darcs-to-git:$PATH
+  export PATH=$HOME/Documents/bin/decuda:$PATH
+  #. $HOME/.ec2rc
+
+  # Directory aliases
+  alias cd-a='cd ~/Documents/code/accelerate'
+  alias cd-s='cd ~/Documents/code/svm'
+fi
 
