@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -vx
 
 function link_file {
     source="${PWD}/$1"
